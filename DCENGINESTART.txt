@@ -1,0 +1,20 @@
+char userInput;
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT); //IP
+  pinMode(5, OUTPUT); //ENA
+
+
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  analogWrite(5, 50);
+  
+  
+}
+
+// the loop function runs over and over again forever
+void loop() {
+
+   

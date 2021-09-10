@@ -1,0 +1,58 @@
+PYTHON:
+
+
+import serial
+import time
+import keyboard
+
+adata = serial.Serial('com7',baudrate=9600, timeout=1)
+
+def LED():
+   adata.write(b'o')
+
+def LEDO():
+    adata.write(b'x')
+
+while(1):
+
+    userip = input('data?')
+
+    if userip == 's':
+        LED()
+
+    if userip == 'c':
+        LEDO()
+
+
+
+
+ARDUINO:
+
+
+char userInput;
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(10, OUTPUT);
+} 
+
+
+
+void loop() {
+
+  if(Serial.available()>0) {
+    userInput = Serial.read();
+
+    if(userInput == 'o') {
+      digitalWrite(10, HIGH);
+    }
+
+     if(userInput == 'x') {
+      digitalWrite(10, LOW);
+    }
+    
+    
+  }
+
+}

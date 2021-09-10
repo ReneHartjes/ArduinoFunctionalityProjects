@@ -1,0 +1,8 @@
+import serial
+
+adata = serial.Serial('com7',9600)
+
+while 1:
+    if(adata.inWaiting()>0):
+        myData= adata.readline()
+        print myData
